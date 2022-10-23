@@ -1,0 +1,22 @@
+#localisation {
+  background-color: $color-bg-gray;
+  text-align: center;
+  padding: 1rem;
+  font-family: $font-roboto;
+}
+
+#reservation {
+  text-align: center;
+  background-color: $color-bg-section;
+  padding: 1.5rem;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h2,
+  p {
+    padding-bottom: 2rem;
+    font-family: $font-roboto;
+  }
+}

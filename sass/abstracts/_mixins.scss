@@ -1,0 +1,5 @@
+@mixin styleBaseBtn($color) {
+  border: none;
+  padding: 1em 2.5em;
+  color: $color;
+}

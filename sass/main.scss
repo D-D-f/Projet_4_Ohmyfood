@@ -1,7 +1,10 @@
-@import "abstracts/variables";
-@import "abstracts/mixins";
-@import "base/reset";
-@import "base/typography";
-@import "layout/header";
-@import "layout/footer";
-@import "components/button";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+@import "./base/reset";
+@import "./base/typography";
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./abstracts/animations";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./components/button";
+@import "./pages/home";
