@@ -1,0 +1,21 @@
+{
+  "name": "defreitas_david_4_ohmyfood_102022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/main.scss:asset/css/style.css",
+    "compressed": "sass --watch sass/main.scss:asset/css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D-D-f/Projet_4_Ohmyfood.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/D-D-f/Projet_4_Ohmyfood/issues"
+  },
+  "homepage": "https://github.com/D-D-f/Projet_4_Ohmyfood#readme"
+}

@@ -3,3 +3,17 @@
   padding: 1em 2.5em;
   color: $color;
 }
+
+@mixin styleH2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+@mixin styleh3 {
+  font-weight: 700;
+}
+
+@mixin containerSection {
+  padding: 2rem 2rem;
+}
