@@ -1,17 +1,69 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Shrikhand&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @keyframes loader {
   from {
     opacity: 1;
     transform: rotate(0deg);
   }
   to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    rotate: 0;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    rotate: 1080deg;
+  }
+}
+@keyframes loaderHidden {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes check {
+  0% {
+    opacity: 1;
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
+    width: 60px;
+  }
+}
+@keyframes btnRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -88,6 +140,28 @@ button a {
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: #f7f7f7;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  height: 100vh;
+  animation: loaderHidden 1s forwards;
+  animation-delay: 1s;
+}
+
+.cercle {
+  height: 100px;
+  width: 100px;
+  border: 3px solid #f7f7f7;
+  border-bottom: 5px solid #9356dc;
+  border-radius: 50%;
+  animation: rotate 1s forwards;
 }
 
 #localisation {
@@ -266,6 +340,9 @@ body {
 .header_menu h1 {
   margin: auto;
 }
+.header_menu .arrow a i {
+  color: black;
+}
 
 .bg-img img {
   height: 375px;
@@ -291,7 +368,32 @@ body {
   font-family: "Shrikhand", cursive;
 }
 .menu-resto .header-section .coeur {
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+}
+.menu-resto .header-section .coeur i {
+  font-size: 22px;
+  position: relative;
+}
+.menu-resto .header-section .coeur i:hover::after {
+  transform: scale(1);
+}
+.menu-resto .header-section .coeur i::after {
+  content: "\f004";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: scale(0);
+  font-weight: 900;
+  background-image: linear-gradient(to bottom, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  transform-origin: top;
+  transition: transform 300ms;
 }
 
 .menu-resto button {
@@ -299,6 +401,22 @@ body {
   margin: auto;
   margin-top: 3rem;
   width: 60%;
+}
+
+.entree,
+.plats,
+.dessert {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.plats {
+  animation-delay: 0.2s;
+}
+
+.dessert {
+  animation-delay: 0.4s;
 }
 
 .menu-plat h2 {
@@ -311,17 +429,86 @@ body {
   margin-bottom: 1rem;
 }
 .menu-plat .menu-repas {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
   border-radius: 15.0431px;
-  padding: 1rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  height: 70px;
+  cursor: pointer;
+}
+.menu-plat .menu-repas .text-menu-repas {
+  padding-left: 1rem;
+}
+.menu-plat .menu-repas .text-menu-repas h3 {
+  font-size: 0.9rem;
 }
 .menu-plat .menu-repas .text-menu-repas p {
+  font-size: 0.7rem;
   font-weight: 300;
+}
+.menu-plat .menu-repas .prix-menu-repas {
+  position: absolute;
+  right: 90px;
+}
+.menu-plat .menu-repas:hover > .button-menu__check {
+  animation: check 600ms ease-in-out both;
+}
+.menu-plat .menu-repas:hover > .button-menu__check i {
+  animation: btnRotate 600ms ease-in-out both;
+}
+
+.button-menu__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  border-radius: 0px 15px 15px 0px;
+  background-color: #99e2d0;
+  height: 70px;
+  width: 0%;
+}
+
+@media screen and (min-width: 769px) {
+  .menu-resto {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .menu-resto .header-section {
+    display: flex;
+    justify-content: center;
+  }
+  .menu-resto .header-section h1 {
+    margin-right: 1rem;
+  }
+  .menu-resto button {
+    width: 20%;
+  }
+  .menu-plat {
+    width: 70%;
+    margin: auto;
+  }
+  .menu-plat .menu-repas .text-menu-repas h3 {
+    font-size: 1.1rem;
+  }
+  .menu-plat .menu-repas .text-menu-repas p {
+    font-size: 0.9rem;
+  }
+  .menu-plat .menu-repas .prix-menu-repas {
+    position: absolute;
+    right: 70px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=style.css.map */

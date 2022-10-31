@@ -5,6 +5,12 @@
   h1 {
     margin: auto;
   }
+
+  .arrow {
+    a i {
+      color: black;
+    }
+  }
 }
 
 .bg-img {
@@ -33,8 +39,34 @@
       font-family: $font-title;
     }
 
-    .coeur {
-      font-size: 1.5rem;
+    & .coeur {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25px;
+      height: 25px;
+    }
+
+    & .coeur i {
+      font-size: 22px;
+      position: relative;
+    }
+    & .coeur i:hover::after {
+      transform: scale(1);
+    }
+    & .coeur i::after {
+      content: "\f004";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transform: scale(0);
+      font-weight: 900;
+      background-image: linear-gradient(to bottom, #9356dc, #ff79da);
+      -webkit-background-clip: text;
+      color: transparent;
+      background-clip: text;
+      transform-origin: top;
+      transition: transform 300ms;
     }
   }
 }
@@ -44,6 +76,22 @@
   margin: auto;
   margin-top: 3rem;
   width: 60%;
+}
+
+.entree,
+.plats,
+.dessert {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.plats {
+  animation-delay: 0.2s;
+}
+
+.dessert {
+  animation-delay: 0.4s;
 }
 
 .menu-plat {
@@ -58,17 +106,95 @@
   }
 
   .menu-repas {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $color-bg-white;
     box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
     border-radius: 15.0431px;
-    padding: 1rem;
     margin-bottom: 1rem;
+    overflow: hidden;
+    height: 70px;
+    cursor: pointer;
+
+    .text-menu-repas {
+      padding-left: 1rem;
+    }
+
+    .text-menu-repas h3 {
+      font-size: 0.9rem;
+    }
 
     .text-menu-repas p {
+      font-size: 0.7rem;
       font-weight: 300;
+    }
+
+    .prix-menu-repas {
+      position: absolute;
+      right: 90px;
+    }
+
+    &:hover > .button-menu__check {
+      animation: check 600ms ease-in-out both;
+    }
+
+    &:hover > .button-menu__check i {
+      animation: btnRotate 600ms ease-in-out both;
+    }
+  }
+}
+
+.button-menu__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  border-radius: 0px 15px 15px 0px;
+  background-color: #99e2d0;
+  height: 70px;
+  width: 0%;
+}
+
+@media screen and (min-width: 769px) {
+  .menu-resto {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    .header-section {
+      display: flex;
+      justify-content: center;
+
+      h1 {
+        margin-right: 1rem;
+      }
+    }
+
+    button {
+      width: 20%;
+    }
+  }
+
+  .menu-plat {
+    width: 70%;
+    margin: auto;
+
+    .menu-repas {
+      .text-menu-repas h3 {
+        font-size: 1.1rem;
+      }
+
+      .text-menu-repas p {
+        font-size: 0.9rem;
+      }
+
+      .prix-menu-repas {
+        position: absolute;
+        right: 70px;
+      }
     }
   }
 }

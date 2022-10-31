@@ -8,3 +8,73 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(0%);
+    opacity: 0.3;
+  }
+
+  70% {
+    opacity: 0.5;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    rotate: 1080deg;
+  }
+}
+
+@keyframes loaderHidden {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes check {
+  0% {
+    opacity: 1;
+    width: 0%;
+  }
+
+  100% {
+    opacity: 1;
+    width: 60px;
+  }
+}
+
+@keyframes btnRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
