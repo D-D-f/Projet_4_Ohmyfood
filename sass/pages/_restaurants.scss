@@ -136,11 +136,11 @@
       right: 90px;
     }
 
-    &:hover > .button-menu__check {
+    &:active > .button-menu__check {
       animation: check 600ms ease-in-out both;
     }
 
-    &:hover > .button-menu__check i {
+    &:active > .button-menu__check i {
       animation: btnRotate 600ms ease-in-out both;
     }
   }
