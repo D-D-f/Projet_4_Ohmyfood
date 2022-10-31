@@ -1,0 +1,74 @@
+.header_menu {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin: auto;
+  }
+}
+
+.bg-img {
+  img {
+    height: 375px;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.menu-resto {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 40px 40px 0px 0px;
+  background-color: $color-bg-section;
+  margin-top: -3.5rem;
+
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-family: $font-title;
+    }
+
+    .coeur {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.menu-resto button {
+  display: block;
+  margin: auto;
+  margin-top: 3rem;
+  width: 60%;
+}
+
+.menu-plat {
+  h2 {
+    width: 2.5rem;
+    font-size: 1.2rem;
+    font-family: $font-roboto;
+    font-weight: 300;
+    border-bottom: 0.3rem solid $color-tertiaire;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-repas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-bg-white;
+    box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+    border-radius: 15.0431px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    .text-menu-repas p {
+      font-weight: 300;
+    }
+  }
+}
