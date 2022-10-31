@@ -442,6 +442,7 @@ body {
   cursor: pointer;
 }
 .menu-plat .menu-repas .text-menu-repas {
+  flex: 1;
   padding-left: 1rem;
 }
 .menu-plat .menu-repas .text-menu-repas h3 {
@@ -452,8 +453,7 @@ body {
   font-weight: 300;
 }
 .menu-plat .menu-repas .prix-menu-repas {
-  position: absolute;
-  right: 90px;
+  margin-right: 1rem;
 }
 .menu-plat .menu-repas:hover > .button-menu__check {
   animation: check 600ms ease-in-out both;
@@ -471,7 +471,7 @@ body {
   border-radius: 0px 15px 15px 0px;
   background-color: #99e2d0;
   height: 70px;
-  width: 0%;
+  width: 0;
 }
 
 @media screen and (min-width: 769px) {
@@ -499,10 +499,6 @@ body {
   }
   .menu-plat .menu-repas .text-menu-repas p {
     font-size: 0.9rem;
-  }
-  .menu-plat .menu-repas .prix-menu-repas {
-    position: absolute;
-    right: 70px;
   }
 }
 * {

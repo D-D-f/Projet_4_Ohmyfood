@@ -119,6 +119,7 @@
     cursor: pointer;
 
     .text-menu-repas {
+      flex: 1;
       padding-left: 1rem;
     }
 
@@ -132,15 +133,14 @@
     }
 
     .prix-menu-repas {
-      position: absolute;
-      right: 90px;
+      margin-right: 1rem;
     }
 
-    &:active > .button-menu__check {
+    &:hover > .button-menu__check {
       animation: check 600ms ease-in-out both;
     }
 
-    &:active > .button-menu__check i {
+    &:hover > .button-menu__check i {
       animation: btnRotate 600ms ease-in-out both;
     }
   }
@@ -155,7 +155,7 @@
   border-radius: 0px 15px 15px 0px;
   background-color: #99e2d0;
   height: 70px;
-  width: 0%;
+  width: 0;
 }
 
 @media screen and (min-width: 769px) {
@@ -189,11 +189,6 @@
 
       .text-menu-repas p {
         font-size: 0.9rem;
-      }
-
-      .prix-menu-repas {
-        position: absolute;
-        right: 70px;
       }
     }
   }
