@@ -12,7 +12,7 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(30%);
   }
   50% {
     transform: translateX(0%);
@@ -242,6 +242,10 @@ body {
   background-color: #f5edff;
 }
 
+a {
+  text-decoration: none;
+}
+
 #restaurants {
   background-color: #f7f7f7;
 }
@@ -444,13 +448,20 @@ body {
 .menu-plat .menu-repas .text-menu-repas {
   flex: 1;
   padding-left: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu-plat .menu-repas .text-menu-repas h3 {
-  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .menu-plat .menu-repas .text-menu-repas p {
-  font-size: 0.7rem;
   font-weight: 300;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .menu-plat .menu-repas .prix-menu-repas {
   margin-right: 1rem;
@@ -493,12 +504,6 @@ body {
   .menu-plat {
     width: 70%;
     margin: auto;
-  }
-  .menu-plat .menu-repas .text-menu-repas h3 {
-    font-size: 1.1rem;
-  }
-  .menu-plat .menu-repas .text-menu-repas p {
-    font-size: 0.9rem;
   }
 }
 * {

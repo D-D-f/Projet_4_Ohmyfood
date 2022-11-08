@@ -113,6 +113,10 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 #restaurants {
   background-color: $color-bg-section;
   & h2 {
