@@ -106,6 +106,10 @@ body {
       font-weight: 700;
       color: black;
     }
+
+    &:hover h3 {
+      color: $color-primary;
+    }
   }
 
   & .item:hover {
@@ -113,8 +117,20 @@ body {
   }
 }
 
-a {
+.item a {
   text-decoration: none;
+}
+
+.buttonPrincipal {
+  text-decoration: none;
+}
+
+nav .item:last-child i::before {
+  color: $color-primary;
+}
+
+nav .item:hover i::before {
+  color: $color-primary;
 }
 
 #restaurants {
